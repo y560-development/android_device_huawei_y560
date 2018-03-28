@@ -122,6 +122,11 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_NO_SECURE_DISCARD := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/libcutils.so|libshim_cutils.so \
+    /system/bin/mm-qcamera-daemon|libqcamerasvr-c++.so
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/huawei/y560/sepolicy
