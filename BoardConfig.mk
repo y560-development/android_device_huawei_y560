@@ -123,6 +123,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_NO_SECURE_DISCARD := true
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
