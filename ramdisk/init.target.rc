@@ -62,7 +62,7 @@ on post-fs-data
 
 #Modified Begin: by hanjianfeng for mm-qcamera-daemon start time 20150609
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class main
     user camera
     group camera system inet input graphics
@@ -78,7 +78,7 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /system/vendor/bin/qseecomd
    class core
    user root
    group root
@@ -96,12 +96,12 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    group root
 
-service time_daemon /system/bin/time_daemon
+service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
 
-service audiod /system/bin/audiod
+service audiod /system/vendor/bin/audiod
    class late_start
    user system
    group system
@@ -121,7 +121,7 @@ on boot
     start rmt_storage
     write /proc/sys/vm/swappiness 100
 
-service wcnss-service /system/bin/wcnss_service
+service wcnss-service /system/vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
@@ -134,7 +134,7 @@ service ppd /system/bin/mm-pp-daemon
     socket pps stream 0660 system system
     group system graphics
 
-service per_mgr /system/bin/pm-service
+service per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system net_raw
@@ -146,7 +146,7 @@ on property:init.svc.surfaceflinger=running
     start ppd
 
 #added by litao begin
-service qcom-serialno-sh /system/bin/sh /init.qcom.serialno.sh
+service qcom-serialno-sh /system/vendor/bin/sh /init.qcom.serialno.sh
     class main
     user root
     oneshot

@@ -81,7 +81,6 @@ extern const char FROM_MODEM[];
 extern const char TO_AFW[];
 extern const char EXIT_TAG[];
 extern const char ENTRY_TAG[];
-extern const char EXIT_ERROR_TAG[];
 
 /*=============================================================================
  *
@@ -99,46 +98,26 @@ extern char* get_timestamp(char* str, unsigned long buf_size);
   provide a value and we default to the initial value to use
   Android's logging levels*/
 #define IF_LOC_LOGE if((loc_logger.DEBUG_LEVEL >= 1) && (loc_logger.DEBUG_LEVEL <= 5))
-
 #define IF_LOC_LOGW if((loc_logger.DEBUG_LEVEL >= 2) && (loc_logger.DEBUG_LEVEL <= 5))
-
 #define IF_LOC_LOGI if((loc_logger.DEBUG_LEVEL >= 3) && (loc_logger.DEBUG_LEVEL <= 5))
-
 #define IF_LOC_LOGD if((loc_logger.DEBUG_LEVEL >= 4) && (loc_logger.DEBUG_LEVEL <= 5))
-
 #define IF_LOC_LOGV if((loc_logger.DEBUG_LEVEL >= 5) && (loc_logger.DEBUG_LEVEL <= 5))
 
-#define LOC_LOGE(...) \
-IF_LOC_LOGE { ALOGE("E/" __VA_ARGS__); } \
-else if (loc_logger.DEBUG_LEVEL == 0xff) { ALOGE("E/" __VA_ARGS__); }
+#define LOC_LOGE(...) IF_LOC_LOGE { ALOGE(__VA_ARGS__); }
+#define LOC_LOGW(...) IF_LOC_LOGW { ALOGW(__VA_ARGS__); }
+#define LOC_LOGI(...) IF_LOC_LOGI { ALOGI(__VA_ARGS__); }
+#define LOC_LOGD(...) IF_LOC_LOGD { ALOGD(__VA_ARGS__); }
+#define LOC_LOGV(...) IF_LOC_LOGV { ALOGV(__VA_ARGS__); }
 
-#define LOC_LOGW(...) \
-IF_LOC_LOGW { ALOGE("W/" __VA_ARGS__); }  \
-else if (loc_logger.DEBUG_LEVEL == 0xff) { ALOGW("W/" __VA_ARGS__); }
-
-#define LOC_LOGI(...) \
-IF_LOC_LOGI { ALOGE("I/" __VA_ARGS__); }   \
-else if (loc_logger.DEBUG_LEVEL == 0xff) { ALOGI("I/" __VA_ARGS__); }
-
-#define LOC_LOGD(...) \
-IF_LOC_LOGD { ALOGE("D/" __VA_ARGS__); }   \
-else if (loc_logger.DEBUG_LEVEL == 0xff) { ALOGD("D/" __VA_ARGS__); }
-
-#define LOC_LOGV(...) \
-IF_LOC_LOGV { ALOGE("V/" __VA_ARGS__); }   \
-else if (loc_logger.DEBUG_LEVEL == 0xff) { ALOGV("V/" __VA_ARGS__); }
 
 #else /* DEBUG_DMN_LOC_API */
 
-#define LOC_LOGE(...) ALOGE("E/" __VA_ARGS__)
+#define LOC_LOGE(...) ALOGE(__VA_ARGS__)
+#define LOC_LOGW(...) ALOGW(__VA_ARGS__)
+#define LOC_LOGI(...) ALOGI(__VA_ARGS__)
+#define LOC_LOGD(...) ALOGD(__VA_ARGS__)
+#define LOC_LOGV(...) ALOGV(__VA_ARGS__)
 
-#define LOC_LOGW(...) ALOGW("W/" __VA_ARGS__)
-
-#define LOC_LOGI(...) ALOGI("I/" __VA_ARGS__)
-
-#define LOC_LOGD(...) ALOGD("D/" __VA_ARGS__)
-
-#define LOC_LOGV(...) ALOGV("V/" __VA_ARGS__)
 
 #endif /* DEBUG_DMN_LOC_API */
 

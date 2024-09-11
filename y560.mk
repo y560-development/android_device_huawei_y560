@@ -18,7 +18,7 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/y560/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/huawei/y560/y560-vendor.mk)
+$(call inherit-product, vendor/huawei/y560/y560-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -101,6 +101,10 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8909
+	
+# Camera
+PRODUCT_PACKAGES += \
+    libcamera_shim
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -111,6 +115,14 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwcnss_qmi \
     wcnss_service
+
+# Debugging
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=mtp,adb \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
