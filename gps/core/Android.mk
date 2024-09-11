@@ -20,7 +20,7 @@ LOCAL_CFLAGS += -DOSS_BUILD
 endif
 
 LOCAL_SHARED_LIBRARIES := \
-	liblog \
+    liblog \
     libutils \
     libcutils \
     libgps.utils \
