@@ -42,9 +42,19 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio.effect@2.0-impl
+
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # Compatibility
 PRODUCT_PACKAGES += \
@@ -53,10 +63,22 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     copybit.msm8909 \
     gralloc.msm8909 \
     hwcomposer.msm8909 \
+    libgenlock \
+    libtinyxml \
     memtrack.msm8909
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.renderscript@1.0-service
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -104,13 +126,12 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    hostapd \
-    wpa_supplicant
-
-PRODUCT_PACKAGES += \
-    libQWiFiSoftApCfg \
     libwcnss_qmi \
     wcnss_service
+
+# WiFi HAL
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service
 
 # Debugging
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
