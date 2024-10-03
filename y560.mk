@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
+    audio.primary.msm8909 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -56,10 +57,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8909 \
     hwcomposer.msm8909 \
     memtrack.msm8909
-
-# Doze
-PRODUCT_PACKAGES += \
-    DozeService
 
 # Ebtables
 PRODUCT_PACKAGES += \
