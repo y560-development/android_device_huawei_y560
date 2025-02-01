@@ -50,7 +50,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libboringssl-compat \
     libril_shim \
-	libril_camera
+    libshim_camera \
+    libshim_waveletcamera
 
 # Display
 PRODUCT_PACKAGES += \
