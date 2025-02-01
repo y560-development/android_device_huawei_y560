@@ -83,7 +83,14 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
     lights.msm8909
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl.legacy \
+    camera.device@3.2-impl \
+    camera.device@1.0-impl.legacy
 
 # Misc
 PRODUCT_PACKAGES += \
