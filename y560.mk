@@ -77,10 +77,6 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8909
-	
-# HIDL
-PRODUCT_COPY_FILES += \
-    device/huawei/y560/manifest.xml:system/vendor/manifest.xml
 
 # Keystore
 PRODUCT_PACKAGES += \
