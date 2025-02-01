@@ -124,7 +124,7 @@ BOARD_NO_SECURE_DISCARD := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib/libcutils.so|libshim_cutils.so \
+    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
     /system/bin/mm-qcamera-daemon|libqcamerasvr-c++.so
 
 # SELinux

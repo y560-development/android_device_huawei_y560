@@ -49,7 +49,8 @@ PRODUCT_PACKAGES += \
 # Compatibility
 PRODUCT_PACKAGES += \
     libboringssl-compat \
-    libril_shim
+    libril_shim \
+	libril_camera
 
 # Display
 PRODUCT_PACKAGES += \
