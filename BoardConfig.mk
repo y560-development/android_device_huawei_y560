@@ -126,7 +126,8 @@ BOARD_NO_SECURE_DISCARD := true
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
-    /system/vendor/bin/mm-qcamera-daemon|libqcamerasvr-c++.so
+    /system/vendor/bin/mm-qcamera-daemon|libqcamerasvr-c++.so \
+	/system/vendor/lib/libmmcamera_wavelet_lib.so|libshim_waveletcamera.so
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
