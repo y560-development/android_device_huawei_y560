@@ -19,6 +19,8 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/y560/overlay
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product, vendor/huawei/y560/y560-vendor.mk)
+# Common Android Go configurations
+$(call inherit-product, build/target/product/go_defaults.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
