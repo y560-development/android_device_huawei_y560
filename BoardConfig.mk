@@ -129,8 +129,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/mm-qcamera-daemon|libqcamerasvr-c++.so
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/huawei/y560/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/huawei/y560/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
