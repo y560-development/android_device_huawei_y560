@@ -33,16 +33,18 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
-    audio.primary.msm8909 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    tinymix \
+    audio.primary.msm8909 \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    tinymix
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio.effect@2.0-impl
 
 # CNE
 PRODUCT_PACKAGES += \
